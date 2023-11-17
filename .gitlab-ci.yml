@@ -1,0 +1,19 @@
+image: php:7.2
+
+stages:
+  - dev
+
+deploy_development:
+  type: dev
+  environment:
+    name: deploymentdev
+    url: devcharisma.aurorasystem.co.id/anggaran-global
+  script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$keydevelopmentaurora02")
+    - mkdir -p ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    - ssh -p 2240 development@43.252.138.89 "cd /home/development/public_html/anggaran-global && rm -Rf composer.lock && git checkout master && git pull origin development && php73 /usr/local/bin/composer update && exit"
+  only:
+    - development

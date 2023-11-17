@@ -1,0 +1,21 @@
+{
+    "name": "div_pdam/core-phalcon-4",
+    "description": "CHPN Phalcon 4 Boilerplate",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Core\\": "system/"
+        }
+    },
+    "require": {
+        "php": ">=7.2",
+        "phpoffice/phpspreadsheet": "^1.18",
+        "fpdf/fpdf": "^1.83",
+        "nesbot/carbon": "^2.58",
+        "mpdf/mpdf": "^8.1",
+        "setasign/fpdi-fpdf": "^2.3",
+        "setasign/fpdf": "^1.8",
+        "rathouz/text-image": "^2.0",
+        "endroid/qr-code": "1.*"
+    }
+}

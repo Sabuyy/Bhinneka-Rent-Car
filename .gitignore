@@ -1,0 +1,21 @@
+# CORE
+/vendor/*
+!/vendor/index.html
+!/vendor/.htaccess
+composer.lock
+/composer.lock
+/storage/*
+!/storage/report-templates
+!/storage/index.html
+!/storage/.htaccess
+
+# RND
+rnd.php
+*.rnd
+rnd.*
+*.rnd.*
+*-rnd.*
+
+# MODULE UPLOAD
+public/logo/*
+*.DS_Store
